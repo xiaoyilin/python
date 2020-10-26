@@ -1,4 +1,4 @@
-From alpine:latest
+FROM alpine:latest
 MAINTAINER yilinxiao <406735078@qq.com>
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories  && \
     apk update && \
@@ -10,3 +10,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py && \
     apk del curl
+CMD ["python3","-V"]
